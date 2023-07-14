@@ -24,10 +24,14 @@ $('#red-btn').on('click', Incrementor)
 
 } // end onReady
 
+let count = 2
+
 function Incrementor() {
-  let countNum = 1;
-  countNum++
-  $('#block-counts').(`<span id="red-count">${countNum}</span>`)
+ 
+  $('#red-count').replaceWith(`<span id="red-count">${count}</span>`)
+  count++
+  
+  
 }
 // create 4 functions to add blocks to DOM
   // selector = blocks
