@@ -75,7 +75,7 @@ function makeYellowBlock() {
 } // end yellow
 
 // create 4 functions to remove blocks from DOM when clicked
-// *** or one efficient function - thank you Matt! ***
+// *** or one efficient function - thank you Aaron! ***
 function removeBlock() {
   console.log($(this));
   $(this).remove();
