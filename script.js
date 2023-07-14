@@ -13,45 +13,18 @@ function onReady() {
   $("#green-btn").on("click", makeGreenBlock);
   $("#yellow-btn").on("click", makeYellowBlock);
 
-  $("#red-btn").on("click", redIncrementor);
-  $("#blue-btn").on("click", blueIncrementor);
-  $("#green-btn").on("click", greenIncrementor);
-  $("#yellow-btn").on("click", yellowIncrementor);
-
   // hey jquery, select document
   // narrow down to block class
   // when it's clicked, execute [removeBlock]
-
-  // [removeBlock] function commented out for part 2
-  // $(document).on('click', '.block', removeBlock)
+  $(document).on("click", ".block", removeBlock);
 } // end onReady
 
-// having trouble getting count variables to 
+// having trouble getting count variables to
 // increment when declared in the function
 let redCount = 2;
 let blueCount = 2;
 let greenCount = 2;
 let yellowCount = 2;
-
-// i'm sure these could be more efficient..
-function redIncrementor() {
-  $("#red-count").replaceWith(`<span id="red-count">${redCount}</span>`);
-  redCount++;
-} // end red
-function blueIncrementor() {
-  $("#blue-count").replaceWith(`<span id="blue-count">${blueCount}</span>`);
-  blueCount++;
-} // end blue
-function greenIncrementor() {
-  $("#green-count").replaceWith(`<span id="green-count">${greenCount}</span>`);
-  greenCount++;
-} // end green
-function yellowIncrementor() {
-  $("#yellow-count").replaceWith(
-    `<span id="yellow-count">${yellowCount}</span>`
-  );
-  yellowCount++;
-} // end yellow
 
 // create 4 functions to add blocks to DOM
 // selector = blocks
@@ -60,18 +33,28 @@ function yellowIncrementor() {
 function makeRedBlock() {
   console.log("🟥");
   $("#blocks").append(`<div class="block red-fill"></div>`);
+  $("#red-count").replaceWith(`<span id="red-count">${redCount}</span>`);
+  redCount++;
 } // end red
 function makeBlueBlock() {
   console.log("🟦");
   $("#blocks").append(`<div class="block blue-fill"></div>`);
+  $("#blue-count").replaceWith(`<span id="blue-count">${blueCount}</span>`);
+  blueCount++;
 } // end blue
 function makeGreenBlock() {
   console.log("🟩");
   $("#blocks").append(`<div class="block green-fill"></div>`);
+  $("#green-count").replaceWith(`<span id="green-count">${greenCount}</span>`);
+  greenCount++;
 } // end green
 function makeYellowBlock() {
   console.log("🟨");
   $("#blocks").append(`<div class="block yellow-fill"></div>`);
+  $("#yellow-count").replaceWith(
+    `<span id="yellow-count">${yellowCount}</span>`
+  );
+  yellowCount++;
 } // end yellow
 
 // create 4 functions to remove blocks from DOM when clicked
