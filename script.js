@@ -2,18 +2,34 @@ console.log('🟥 🟦 🟩 🟨');
 
 $(document).ready(onReady);
 
+// *** Remember ***
+// $('selector').modifier(class, data, function)
+
 function onReady() {
-// hey jquery, select button with id "red-btn"
+// hey jquery, select button with id "[color]-btn"
 // when it's clicked, execute make[color]Block function  
 $('#red-btn').on('click', makeRedBlock)
 $('#blue-btn').on('click', makeBlueBlock)
 $('#green-btn').on('click', makeGreenBlock)
 $('#yellow-btn').on('click', makeYellowBlock)
 
-$('')
-}
+$('#red-btn').on('click', Incrementor)
 
-// create 4 functions
+// hey jquery, select document  
+  // narrow down to block class
+  // when it's clicked, execute [removeBlock]
+
+// [removeBlock] function commented out for part 2
+// $(document).on('click', '.block', removeBlock)
+
+} // end onReady
+
+function Incrementor() {
+  let countNum = 1;
+  countNum++
+  $('#block-counts').(`<span id="red-count">${countNum}</span>`)
+}
+// create 4 functions to add blocks to DOM
   // selector = blocks
   // modifier = .append (push)
   // class = block [color]-fill
@@ -38,29 +54,13 @@ function makeYellowBlock() {
 } // end yellow
 
 
+// create 4 functions to remove blocks from DOM when clicked
+  // *** or one more efficient function - thank you Matt! ***
+function removeBlock () {
+    console.log($(this))
+    $(this).remove()
+}
 
 
 
-// You are provided with 4 buttons:
-  // red      <button id="red-btn">Red</button>
-  // blue     <button id="blue-btn">Blue</button>
-  // green    <button id="green-btn">Green</button>
-  // yellow   <button id="yellow-btn">Yellow</button>
 
-// when you click on a button:
-//   add a color block of that color to the DOM.
-
-// 4 color blocks:
-  // red     <div class="block red-fill"></div>
-  // blue    <div class="block blue-fill"></div>
-  // green   <div class="block green-fill"></div>
-  // yellow  <div class="block yellow-fill"></div>
-
-// when you click on a color block:
-//   remove that block from the DOM
-
-
-// document onReady
-// onReady function
-// function to make all blocks?
-    // or specific function for specific button
