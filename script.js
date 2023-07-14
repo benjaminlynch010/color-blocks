@@ -13,7 +13,10 @@ $('#blue-btn').on('click', makeBlueBlock)
 $('#green-btn').on('click', makeGreenBlock)
 $('#yellow-btn').on('click', makeYellowBlock)
 
-$('#red-btn').on('click', Incrementor)
+$('#red-btn').on('click', redIncrementor)
+$('#blue-btn').on('click', blueIncrementor)
+$('#green-btn').on('click', greenIncrementor)
+$('#yellow-btn').on('click', yellowIncrementor)
 
 // hey jquery, select document  
   // narrow down to block class
@@ -24,15 +27,29 @@ $('#red-btn').on('click', Incrementor)
 
 } // end onReady
 
-let count = 2
+// having trouble getting count variables to increment when
+// declared in the function
+let redCount = 2
+let blueCount = 2
+let greenCount = 2
+let yellowCount = 2
 
-function Incrementor() {
- 
-  $('#red-count').replaceWith(`<span id="red-count">${count}</span>`)
-  count++
-  
-  
+function redIncrementor() {
+  $('#red-count').replaceWith(`<span id="red-count">${redCount}</span>`)
+  redCount++
 }
+function blueIncrementor() {
+    $('#blue-count').replaceWith(`<span id="blue-count">${blueCount}</span>`)
+    blueCount++
+  }
+  function greenIncrementor() {
+    $('#green-count').replaceWith(`<span id="green-count">${greenCount}</span>`)
+    greenCount++
+  }
+  function yellowIncrementor() {
+    $('#yellow-count').replaceWith(`<span id="yellow-count">${yellowCount}</span>`)
+    yellowCount++
+  }
 // create 4 functions to add blocks to DOM
   // selector = blocks
   // modifier = .append (push)
